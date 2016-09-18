@@ -1,4 +1,3 @@
-$(document).ready(function() {
     $("#projectcontainer").hide();
     $("#contactcontainer").hide();
   
@@ -26,5 +25,3 @@ $(document).ready(function() {
     $(this).addClass("active");
     $(this).addClass("darkText");
   });
-
-});
