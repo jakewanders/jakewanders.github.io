@@ -1,0 +1,138 @@
+#altcol {
+color: #AB9F9D !important;
+  font-size: 34px;
+}
+
+body {
+  width: 100%;
+  padding-top: 80px !important;
+  background-color: ##BDBDBD !important;
+
+}
+
+@media (min-width: 992px) {
+#introcontainer {
+padding-top: 70px;
+}
+  #contactcontainer {
+    padding-top: 80px;
+  }
+}
+
+#menubar {
+  background: #12355B;
+}
+
+.text-important {
+  color: #01161E !important;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.text-warning {
+  color: #788888 !important;
+} 
+
+#name {
+font-family: 'Open Sans', sans-serif;
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
+
+.topPad {
+  margin-top: 50px;
+}
+
+.project {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#introcontainer {
+
+}
+
+#contactcontainer {
+
+}
+
+#projectcontainer {
+
+}
+
+.center {
+  width:100%;
+  text-align:center;
+}
+
+.darkText {
+  font-color: #012210 !important;
+}
+
+.capit {
+  font-size: 16px;
+}
+
+img {
+  border-radius: 10px !important;
+  max-width: 400px;
+}
+
+#menucontainer {
+  
+}
+
+.size21 {
+  font-size: 21px;
+}
+
+.size50 {
+  font-size: 50px;
+}
+
+.size37 {
+  font-size: 37px;
+}
+
+.size28 {
+  font-size: 28px;
+}
+
+.size21 {
+  font-size: 21px;
+}
+
+.size16 {
+  font-size: 16px;
+}
+
+.size67 {
+  font-size: 67px;
+}
+
+.size89 {
+  font-size: 89px;
+}
+
+a:link { 
+    color: #BDBDBD !important;
+}
+
+a:visited {
+color: #BDBDBD !important;
+}
+
+a:hover {
+  color: #000000 !important;
+  border-width: 1px !important;
+  border-color: rgba(255, 255, 255, 1) !important;
+}
+
+a:active {
+  color: #000000 !important;
+}
+
+.active {
+  color: #000000 !important;
+}
