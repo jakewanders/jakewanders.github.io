@@ -1,138 +1,177 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <title>
-    Jake Nelson / Web Developer
-  </title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="https://jnelson180.github.io/css/main.css" rel="stylesheet">
-
-
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <title>Jake Nelson // Aspiring Web Developer</title>
 </head>
-<body>
-  <div id="maindiv" class="center">
-    <div id="menucontainer">
-      <ul class="nav nav-tabs navbar-fixed-top" role="tablist" id="menubar">
-        <li class="active navit" id="introNav"><a href="#">Intro</a></li>
-        <!-- <li><a href="#">Skills</a></li> -->
-        <li class="navit" id="portfolioNav"><a href="#portfolio">Portfolio</a></li>
-        <!-- <li><a href="#">About</a></li> -->
-        <li id="contactNav"><a href="#contact">Contact</a></li>
-        <li><a href="https://www.visualcv.com/jnelson180" target="_blank">Resume</a></li>
-      </ul>
-    </div>
-    <div class="container" id="introcontainer">
-      <div id="noApply">
-        <div id="intro">
-          <div>
-            <h1 class="text-important size67 center" id="name">Jake Nelson<br />
-              <small> <i><span id="altcol">// ASPIRING WEB DEVELOPER</span></i></small></h1>
+<div id="wrapper">
+  <div id="header">
+
+    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+  <a name="home" id="home" class="anchor">anchor text [invisible]</a>
+
+  <div id="wrapper">
+    <div id="header">
+      <!-- social media sidebar -->
+      <div class="list-group sideButtons">
+        <a href="https://www.github.com/jnelson180" id="gpill" class="list-group-item" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="http://www.twitter.com/jnelson180" id="tpill" class="list-group-item" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/jnelson180" id="lpill" class="list-group-item" target="_blank"><i class="fa fa-linkedin"></i></a>
+      </div>
+      <!-- end of sidebar -->
+
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+            <p class="navbar-brand">Jake Nelson</p>
           </div>
-          <h3 class="in1 text-important size28 center">FreeCodeCamp student. Lifelong learner. Passionate problem solver.</h3>
-          <br /><br />
-          <h4 class="size28 in1 text-important center">Interests: Coding, reading, all varieties of music, good coffee, and craft beer. </h4>
-          <br /><br />
-          <h4 class="size28 in1 text-important center">Skills: JavaScript, HTML/5, CSS/3, jQuery, Bootstrap</h4>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <!-- <li><a href="#">HOME</a></li> -->
+              <li><a href="#home">PROJECTS</a></li>
+              <!-- <li><a href="#about">ABOUT</a></li> -->
+              <li><a href="#contact">CONTACT</a></li>
+              <li><a href="https://www.visualcv.com/jnelson180">RESUME</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">SOCIAL<span class="caret"></span>
+            </a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://www.twitter.com/jnelson180" target="_blank">Twitter</a></li>
+                  <li><a href="https://www.linkedin.com/in/jnelson180" target="_blank">LinkedIn</a></li>
+                  <li><a href="https://www.github.com/jnelson180" target="_blank">GitHub</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+        <span id="awdtitle"><small>// Aspiring Web Developer</small></span>
+      </nav>
     </div>
-    <div class="container" id="projectcontainer">
-      <div class="row">
-        <div class="col-sm-4 project">
-          <h3 class="capit text-warning text-center">LOCAL WEATHER</h3>
-          <a href="http://codepen.io/JNelson180/full/vGbvjp/" target="_blank"><img src="/misc/lwthumb.png" class="img-responsive img-thumbnail" /></a>
-        </div>
-        <div class="col-sm-4 project">
-          <h3 class="capit text-warning text-center"> CALCULATOR</h3>
-          <a href="http://codepen.io/JNelson180/full/zBaNqy" target="blank"><img src="/misc/jcthumb.png" class="img-responsive img-thumbnail" /></a>
-        </div>
-        <div class="col-sm-4 project">
-          <h3 class="capit text-warning text-center">SIMON SAYS</h3>
-          <a href="http://codepen.io/JNelson180/full/gwaZKz/" target="_blank"><img src="/misc/simonthumb.png" class="img-responsive img-thumbnail" /></a>
-        </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-sm-4 project">
-          <h3 class="capit text-warning text-center">TIC TAC TOE</h3>
-          <a href="http://codepen.io/JNelson180/full/BzvOVz" target="_blank"><img src="/misc/ttthumb.png" class="img-responsive img-thumbnail" /></a>
-        </div>
-        <div class="col-sm-4 project">
-          <h3 class="capit text-warning text-center">TWITCH VIEWER</h3>
-          <a href="http://codepen.io/JNelson180/full/MewWbB" target="_blank"><img src="/misc/tvthumb.png" class="img-responsive img-thumbnail" /></a>
-        </div>
-        <div class="col-sm-4 project">
-          <h3 class="capit text-warning text-center">POMODORO</h3>
-          <a href="http://codepen.io/JNelson180/full/Wxaybg" target="_blank"><img src="/misc/pcthumb.png" class="img-responsive img-thumbnail" /></a>
-        </div>
-      </div>
-    </div>
-        <br /> 
-        <a name="contact"></a>
-      </div>
-    </div>
+    <a id="home"></a>
+    <div id="content">
+      <!--
+      <div id="home" class="container text-center">
+    <h3>Jake Nelson</h3>
+    <p>// Aspiring Web Developer</p>
+    <br>
   </div>
-  <P>
-    <div class="center" id="contactcontainer">
-      <div class="row">
-        <div class="col-sm-4 text-center topPad">
-          <a href="https://twitter.com/JNelson180" target="_blank"><img src="http://www.freeiconspng.com/uploads/twitter-icon-download-18.png" width="100" height="100" /></a><br />
-          <a href="https://twitter.com/JNelson180" class="twitter-follow-button" data-show-count="false">Follow @JNelson180</a>
-          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-          <br />
-          <a href="https://twitter.com/intent/tweet?screen_name=JNelson180" class="twitter-mention-button" data-show-count="false">Tweet to @JNelson180</a>
-          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+-->
+      <div id="projects" class="container text-center">
+        <div id="projectrow1" class="row">
+          <div class="col-sm-4">
+            <p><strong>Simon Says</strong></p><br>
+            <!-- <a href="#demo" data-toggle="collapse"> -->
+            <a href="http://codepen.io/JNelson180/full/gwaZKz" target="_blank">
+              <img src="http://jakenelson.comxa.com/misc/simonthumbnb500.png" class="img-circle proj" alt="First project">
+            </a>
+            <div id="demo" class="demo">
+              <!-- use class="collapse" to enable collapsing description -->
+              <p>Simon says JavaScript based browser game.</p>
+              <p>Built with HTML, CSS, JavaScript and jQuery.</p>
+              <p>Complete with sound and jQuery animation.</p>
+              <p><a href="http://codepen.io/JNelson180/full/gwaZKz" target="_blank"><strong>See it on CodePen</strong></a></p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <p><strong>JavaScript Calculator</strong></p><br>
+            <!-- <a href="#demo2" data-toggle="collapse"> -->
+            <a href="http://codepen.io/JNelson180/full/zBaNqy" target="_blank">
+              <img src="http://jakenelson.comxa.com/misc/jcthumbnb500.png" class="img-circle proj" alt="Second project">
+            </a>
+            <div id="demo2" class="demo">
+              <p>Simple JavaScript calculator web app.</p>
+              <p>Built on pure JavaScript.</p>
+              <p>Keyboard compatible.</p>
+              <p><a href="http://codepen.io/JNelson180/full/zBaNqy" target="_blank"><strong>See it on CodePen</strong></a></p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <p><strong>Local Weather</strong></p><br>
+            <!-- <a href="#demo3" data-toggle="collapse"> -->
+            <a href="http://codepen.io/JNelson180/full/vGbvjp" target="_blank">
+              <img src="http://jakenelson.comxa.com/misc/lwthumbnb500.png" class="img-circle proj" alt="Third project">
+            </a>
+            <div id="demo3" class="demo">
+              <p>Uses browser specific location method.</p>
+              <p>Pulls data from Open Weather API.</p>
+              <p>Imperial or Metric units.</p>
+              <p><a href="http://codepen.io/JNelson180/full/vGbvjp" target="_blank"><strong>See it on CodePen</strong></a></p>
+
+            </div>
+          </div>
         </div>
-        <div class="col-sm-4 text-center topPad">
-          <a href="https://www.linkedin.com/in/jnelson180" target="_blank"><img src="https://image.freepik.com/free-icon/linkedin-logo_318-50643.png" width="128" height="128" /></a>
-        </div>
-        <div class="col-sm-4 text-center topPad">
-          <a href="mailto:jnelson180@gmail.com"><img src="http://megaicons.net/static/img/icons_sizes/57/145/256/communication-gmail-icon.png" width="128" height="128" /></a>
+        <div id="projectrow2" class="row">
+          <div class="col-sm-4">
+            <p><strong>Pomodoro Clock</strong></p><br>
+            <!-- <a href="#demo4" data-toggle="collapse"> -->
+            <a href="http://codepen.io/JNelson180/full/Wxaybg" target="_blank">
+              <img src="http://jakenelson.comxa.com/misc/pcthumbnb500.png" class="img-circle proj" alt="First project">
+            </a>
+            <div id="demo4" class="demo">
+              <p>Built with JavaScript and jQuery.</p>
+              <p>Adjustable session and break lengths.</p>
+              <p>User can pause session or break timer.</p>
+              <p><a href="http://codepen.io/JNelson180/full/Wxaybg" target="_blank"><strong>See it on CodePen</strong></a></p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <p><strong>Tic Tac Toe</strong></p><br>
+            <!-- <a href="#demo5" data-toggle="collapse"> -->
+            <a href="http://codepen.io/JNelson180/full/BzvOVz" target="_blank">
+              <img src="http://jakenelson.comxa.com/misc/ttthumbnb500.png" class="img-circle proj" alt="Second project">
+            </a>
+            <div id="demo5" class="demo">
+              <p>Tic Tac Toe web app.</p>
+              <p>Built on JavaScript and jQuery.</p>
+              <p>Minimal design.</p>
+              <p><a href="http://codepen.io/JNelson180/full/BzvOVz" target="_blank"><strong>See it on CodePen</strong></a></p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <p><strong>Twitch.tv Viewer</strong></p><br>
+            <!-- <a href="#demo6" data-toggle="collapse"> -->
+            <a href="http://codepen.io/JNelson180/full/MewWbB" target="_blank">
+              <img src="http://jakenelson.comxa.com/misc/tvthumbnb500.png" class="img-circle proj" alt="Third project">
+            </a>
+            <div id="demo6" class="demo">
+              <p>Shows a list of Twitch.tv broadcasters</p>
+              <p>Displays user and channel status.</p>
+              <p>Pulls data from Twitch API.</p>
+              <p><a href="http://codepen.io/JNelson180/full/MewWbB" target="_blank"><strong>See it on CodePen</strong></a></p>
+
+            </div>
+          </div>
         </div>
       </div>
-    
-        <br /><br /> <br /><br />
-        <p class="center">
-          <br />
-          <h4 class="size21 in10 text-important"><br />
-      Feel free to contact me with thoughts, questions or ideas. I'm also available for freelance work, and I'd love to hear from you!
-           </h4><br /> </p>
+      <div id="contact" class="container-fluid">
+        <h3 class="text-center">Contact</h3>
+        <p class="text-center"><em>I'd love to hear from you!</em></p>
+        <div class="row test">
+          <div class="col-md-12 text-center">
+            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp; <a href="mailto:jnelson180@gmail.com">jnelson180@gmail.com</a></p>
+            <p><span class="glyphicon glyphicon-globe"></span>&nbsp; <a href="https://www.linkedin.com/in/jnelson180" target="_blank">LinkedIn</a></p>
+            <p><span class="glyphicon glyphicon-globe"></span>&nbsp; <a href="https://www.github.com/jnelson180" target="_blank">GitHub</a></p>
+            <p><span class="glyphicon glyphicon-globe"></span>&nbsp; <a href="http://www.twitter.com/jnelson180" target="_blank">Twitter</a></p>
+          </div>
+        </div>
+      </div>
+      <div id="footer" class="container-fluid">
+        <footer class="text-center">
+          <a href="#home" class="up-arrow">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+          </a>
+        </footer>
       </div>
     </div>
-    </div>
-  <script type="text/javascript">  
-    $("#projectcontainer").hide();
-    $("#contactcontainer").hide();
-  
-  $("#introNav").click(function() {    
-    $("#projectcontainer").hide( "fast", function() {$("#contactcontainer").hide( "fast", function() {$("#introcontainer").show("fast", function() {});});});
-    
-    
-  });
-  
-    $("#portfolioNav").click(function() {
-    $("#introcontainer").hide( "fast", function() {$("#contactcontainer").hide( "fast", function() {$("#projectcontainer").show("fast", function() {});});});
-
-  });
-  
-    $("#contactNav").click(function() {
-    $("#projectcontainer").hide( "fast", function() {$("#introcontainer").hide( "fast", function() {$("#contactcontainer").show("fast", function() {});});});
-    
-  });
-
-  $("li").click(function() {
-  $("li").each(function() {
-      $(this).removeClass("active");
-      $(this).removeClass("darkText");
-    }); 
-    $(this).addClass("active");
-    $(this).addClass("darkText");
-  });
-  </script>
 </body>
-
-</html>
+  </html>

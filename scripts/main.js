@@ -1,20 +1,20 @@
-
+$(document).ready(function() {
     $("#projectcontainer").hide();
     $("#contactcontainer").hide();
   
   $("#introNav").click(function() {    
-    $("#projectcontainer").hide( "fast", function() {$("#contactcontainer").hide( "fast", function() {$("#introcontainer").show("fast", function() {});});});
+    $("#projectcontainer").hide( "slow", function() {$("#contactcontainer").hide( "slow", function() {$("#introcontainer").show("slow", function() {});});});
     
     
   });
   
     $("#portfolioNav").click(function() {
-    $("#introcontainer").hide( "fast", function() {$("#contactcontainer").hide( "fast", function() {$("#projectcontainer").show("fast", function() {});});});
+    $("#introcontainer").hide( "slow", function() {$("#contactcontainer").hide( "slow", function() {$("#projectcontainer").show("slow", function() {});});});
 
   });
   
     $("#contactNav").click(function() {
-    $("#projectcontainer").hide( "fast", function() {$("#introcontainer").hide( "fast", function() {$("#contactcontainer").show("fast", function() {});});});
+    $("#projectcontainer").hide( "slow", function() {$("#introcontainer").hide( "slow", function() {$("#contactcontainer").show("slow", function() {});});});
     
   });
 
@@ -27,4 +27,4 @@
     $(this).addClass("darkText");
   });
 
-
+});

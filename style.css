@@ -11,6 +11,13 @@ height: 100%;
 
 }
 
+#home {
+   position: relative;
+   top: 0px;
+   color: #ffffff;
+   visibility:hidden;
+}
+
 #wrapper {
   min-height: 100%;
   position: relative;
@@ -82,7 +89,7 @@ height: 100%;
 }
 
 .container {
-  padding: 80px 120px;
+  margin-top: 120px !important;
 }
 
 #projects {
@@ -92,13 +99,17 @@ height: 100%;
 .demo {
   padding-bottom: 60px;
 }
+
 .proj {
   border: 10px solid transparent;
   margin-bottom: 25px;
   display: block;
+  text-align: center;
   max-width: 100%;
   height: auto;
   opacity: 0.8;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .proj:hover {
