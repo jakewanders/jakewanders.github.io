@@ -18,25 +18,62 @@ $(document).ready(function() {
 
   });
 
-  $("li").click(function() {
-  $("li").each(function() {
-      $(this).removeClass("active");
-      $(this).removeClass("darkText");
-    });
-    $(this).addClass("active");
-    $(this).addClass("darkText");
-  });
 
   $( "#contactButton" ).click(function() {
-    console.log("contactButton clicked");
-    $("#projects").hide();
-    $("#contact").show();
+    $("#projects").hide( "slow", function() {
+      $("#contact").slideDown("slow");
+    });
   });
 
   $("#projectsButton").click(function() {
-    console.log("projectsButton clicked");
-    $("#contact").hide();
-    $("#projects").show();
+    $("#contact").slideUp("slow", function() {
+      $("#projects").slideDown("slow");
+    });
+  });
+
+var currentPage = Number(1);
+var numPages = document.getElementsByClassName('projectRow');
+console.log(numPages[0].id);
+  $("#nextButton").click(function() {
+      var curRow = "projectrow" + currentPage;
+      var nextRow = (function() {
+        if (currentPage == numPages.length) {
+        return "projectrow1";
+      }
+      else return "projectrow" + Number(currentPage + 1);
+    })();
+
+      console.log(nextRow);
+      console.log("curRow is " + curRow);
+      $("#" + curRow).fadeOut("slow", function() {
+        $("#" + nextRow).fadeIn("slow");
+      });
+      if (currentPage == 3) {
+      currentPage = 1;
+    } else {
+      currentPage ++;
+    }
+  });
+
+  $("#nextButton2").click(function() {
+      var curRow = "projectrow" + currentPage;
+      var nextRow = (function() {
+        if (currentPage == numPages.length) {
+        return "projectrow1";
+      }
+      else return "projectrow" + Number(currentPage + 1);
+    })();
+
+      console.log(nextRow);
+      console.log("curRow is " + curRow);
+      $("#" + curRow).fadeOut("slow", function() {
+        $("#" + nextRow).fadeIn("slow");
+      });
+      if (currentPage == 3) {
+      currentPage = 1;
+    } else {
+      currentPage ++;
+    }
   });
 
 });
