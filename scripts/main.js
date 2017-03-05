@@ -21,6 +21,7 @@ $(document).ready(function() {
 
   $( "#contactButton" ).click(function() {
     $("#projects").hide( "slow", function() {
+      $("footer").hide();
       $("#contact").slideDown("slow");
     });
   });
@@ -28,6 +29,7 @@ $(document).ready(function() {
   $("#projectsButton").click(function() {
     $("#contact").slideUp("slow", function() {
       $("#projects").slideDown("slow");
+      $("footer").slideDown("slow");
     });
   });
 
