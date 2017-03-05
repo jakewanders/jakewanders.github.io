@@ -8,7 +8,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="https://jnelson180.github.io/css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="scripts/main.js"></script>
   <title>Jake Nelson // Aspiring Web Developer</title>
 </head>
 <div id="wrapper">
@@ -37,9 +38,9 @@
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                   <!-- <li><a href="#">HOME</a></li> -->
-                  <li><a href="#home">PROJECTS</a></li>
+                  <li><a href="#home" id="projectsButton">PROJECTS</a></li>
                   <!-- <li><a href="#about">ABOUT</a></li> -->
-                  <li><a href="#contact">CONTACT</a></li>
+                  <li><a href="#contact" id="contactButton">CONTACT</a></li>
                   <li><a href="https://www.visualcv.com/jnelson180" target="_blank">RESUME</a></li>
                   <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">LINKS<span class="caret"></span>
@@ -55,8 +56,8 @@
               </div>
             </div>
             <span id="awdtitle">// Developer</span>
+          </div>
           </nav>
-        </div>
         <!-- End of navigation -->
 
         <a id="home"></a>
@@ -64,7 +65,7 @@
           <div id="projects" class="container text-center">
 
             <!-- Begin first project row -->
-            <div id="projectrow1" class="row">
+            <div id="projectrow1" class="row projectRow">
               <div class="col-sm-4">
                 <p><strong>Simon Says</strong></p><br>
                 <!-- <a href="#demo" data-toggle="collapse"> -->
@@ -110,7 +111,7 @@
             </div>
 
             <!-- Begin second project row -->
-            <div id="projectrow2" class="row">
+            <div id="projectrow2" class="row projectRow">
               <div class="col-sm-4">
                 <p><strong>Image Search Data</strong></p><br>
                 <!-- <a href="#demo2" data-toggle="collapse"> -->
@@ -153,7 +154,7 @@
             </div>
 
             <!-- Begin third project row -->
-            <div id="projectrow3" class="row">
+            <div id="projectrow3" class="row projectRow">
               <div class="col-sm-4">
                 <p><strong>Twitch.tv Viewer</strong></p><br>
                 <!-- <a href="#demo6" data-toggle="collapse"> -->
@@ -211,13 +212,7 @@
               </div>
             </div>
           </div>
-          <div id="footer" class="container-fluid">
-            <footer class="text-center">
-              <a href="#home" class="up-arrow">
-                <span class="glyphicon glyphicon-chevron-up"></span>
-              </a>
-            </footer>
-          </div>
+
         </div>
       </div>
     </body>
