@@ -35,6 +35,8 @@ $(document).ready(function() {
 
 var currentPage = Number(1);
 var numPages = document.getElementsByClassName('projectRow');
+var curRow;
+var nextRow;
 console.log(numPages[0].id);
   $("#nextButton").click(function() {
       var curRow = "projectrow" + currentPage;
@@ -50,7 +52,7 @@ console.log(numPages[0].id);
       $("#" + curRow).fadeOut("slow", function() {
         $("#" + nextRow).fadeIn("slow");
       });
-      if (currentPage == 3) {
+      if (currentPage == 4) {
       currentPage = 1;
     } else {
       currentPage ++;
@@ -71,7 +73,7 @@ console.log(numPages[0].id);
       $("#" + curRow).fadeOut("slow", function() {
         $("#" + nextRow).fadeIn("slow");
       });
-      if (currentPage == 3) {
+      if (currentPage == 4) {
       currentPage = 1;
     } else {
       currentPage ++;
