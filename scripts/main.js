@@ -85,12 +85,12 @@ $(document).ready(function () {
             description: "Upload a file to view its metadata",
             skills: "Nodejs, Javascript, Express, Bootstrap"
         },
-        {
-            url: "https://codepen.io/JNelson180/full/JrbBWX/",
-            title: "Flexbox Bookshelf",
-            description: "Dynamically generated bookshelf based on Goodreads API data.",
-            skills: "Nodejs, Express, Heroku, MongoDB, Javascript, HTML, CSS"
-        },
+        // {
+        //     url: "https://codepen.io/JNelson180/full/JrbBWX/",
+        //     title: "Flexbox Bookshelf",
+        //     description: "Dynamically generated bookshelf based on Goodreads API data.",
+        //     skills: "Nodejs, Express, Heroku, MongoDB, Javascript, HTML, CSS"
+        // },
         {
             url: "https://codepen.io/JNelson180/full/vKbrkv/",
             title: "Tic Tac Toe",
