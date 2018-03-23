@@ -43,12 +43,12 @@ $(document).ready(function () {
             description: "A basic local weather app.",
             skills: "JavaScript/ES6, HTML, CSS"
         },
-        {
-            url: "https://www.sunshinerising.net/",
-            title: "Sunshine Rising Book Blog",
-            description: "A WordPress based book blog with custom elements.",
-            skills: "Wordpress, JavaScript, HTML, CSS, PHP"
-        },
+        // {
+        //     url: "https://www.sunshinerising.net/",
+        //     title: "Sunshine Rising Book Blog",
+        //     description: "A WordPress based book blog with custom elements.",
+        //     skills: "Wordpress, JavaScript, HTML, CSS, PHP"
+        // },
         {
             url: "https://smurl-app.herokuapp.com/",
             title: "URL Shortener",
