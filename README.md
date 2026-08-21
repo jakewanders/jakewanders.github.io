@@ -43,7 +43,7 @@ gh run watch                                     # follow the latest run
 curl -sI https://jakewanders.github.io | head -1 # expect HTTP/2 200
 ```
 
-If the run is green but the site looks stale, it is CDN cache: hard-refresh, or check the `etag` header changed.
+If the run is green but the site looks stale, it is browser/CDN cache. The HTML links `assets/site.css?v=<sha>` and `assets/theme.js?v=<sha>`; **bump that `?v=` value in both HTML files whenever you change CSS or JS** (e.g. `sed -i "s/?v=[a-f0-9]*/?v=$(git rev-parse --short HEAD)/" index.html work.html`) so visitors never see an old stylesheet.
 
 ### Roll back
 
