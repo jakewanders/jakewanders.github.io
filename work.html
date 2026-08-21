@@ -57,7 +57,7 @@
     <div class="body work-list">
 
       <article class="card" id="lifedash">
-        <div class="kicker"><span>2026 · TypeScript, Next.js 16, React 19, Postgres</span><span class="status"><a href="https://lifedash-liart.vercel.app">live — sign-in required</a> · source private</span></div>
+        <div class="kicker"><span>2026 · TypeScript, Next.js 16, React 19, Postgres</span><span class="status"><a href="https://lifechronicler.vercel.app/">live — sign-in required</a> · source private</span></div>
         <h3>LifeDash</h3>
         <p>A personal dashboard — multi-board kanban, mood and wellness, nutrition, habits, long-term notes — built as a single Next.js app on Vercel. The brief I set myself: a Trello-style board for one person that feels instant, survives bad Wi-Fi, and keeps the data private.</p>
         <p><strong>Offline-first</strong>: the browser is the source of truth and the UI never waits on the network; state syncs to one API route that encrypts it (AES-256-GCM) before it touches Neon Postgres. <strong>Never lose an edit</strong>: versioned sync with optimistic concurrency — the server writes only if the version matches, otherwise the client merges per-entity by <code>updatedAt</code> with tombstones and retries. <strong>Testable by construction</strong>: a pure domain layer (types, Zod schemas, reducers) with no React or browser dependencies, feature modules that never import server code, and CI that runs typecheck → lint → unit with coverage thresholds → build → Playwright end-to-end on every PR. Light/dark theme, mobile layout, and an interview-style <em>system design doc</em> with diagrams.</p>
