@@ -1,159 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jake Nelson — Senior Software Engineer</title>
+  <meta name="description" content="Jake Nelson is a senior software engineer (React, TypeScript, Node) with 10 years of experience, focused on AI-assisted development, agent harnesses, and MCP tooling.">
+  <meta name="author" content="Jake Nelson">
+  <link rel="canonical" href="https://jakewanders.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Jake Nelson — Senior Software Engineer">
+  <meta property="og:description" content="React · TypeScript · Node · AI-assisted development and agent tooling.">
+  <meta property="og:url" content="https://jakewanders.github.io/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f6e76'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' fill='white' text-anchor='middle'%3Ejn%3C/text%3E%3C/svg%3E">
 
-  <head>
+  <!-- Apply theme before first paint to avoid a flash. -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "dark" && t !== "light") {
+        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="page">
 
-    <title>Jake Nelson // Developer</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
-
-    <!-- Custom styles for this template -->
-    <link href="css/grayscale.css" rel="stylesheet">
-
-  </head>
-
-  <body id="page-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Jake Nelson</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#download">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://www.visualcv.com/jakewanders" target="_blank">Resume</a>
-            </li>
-            </li>
-          </ul>
-        </div>
-      </div>
+  <header class="topbar">
+    <nav class="nav" aria-label="Site">
+      <a href="./" aria-current="page">résumé</a>
+      <a href="work.html">work</a>
     </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </header>
 
-    <!-- debug only 
-    <div id="controls">
-      <button onclick="prevBackground()">prev</button>
-      <button onclick="nextBackground()">next</button>
-      <button onclick="black()">color</button>
-      <button onclick="mask()">mask</button>
+  <section class="masthead">
+    <h1>Jake Nelson</h1>
+    <p class="role">Senior software engineer. Ten years shipping product in <em>React, TypeScript, and Node</em> — now building the tooling that lets AI agents do real engineering work.</p>
+    <ul class="links">
+      <li><a href="mailto:jnelson180@gmail.com">jnelson180@gmail.com</a></li>
+      <li><a href="https://github.com/jakewanders" rel="me">github.com/jakewanders</a></li>
+      <li><a href="https://www.linkedin.com/in/jnelson180" rel="me">linkedin.com/in/jnelson180</a></li>
+      <li class="no-print"><a href="javascript:window.print()">print / save as PDF</a></li>
+    </ul>
+  </section>
+
+  <section class="section" id="summary">
+    <h2>Summary</h2>
+    <div class="body">
+      <p class="lede">Full-stack JavaScript engineer who has spent a decade on the front end and the services behind it, and the last few years on a different problem: how to make AI-assisted development reliable enough to run unattended.</p>
+      <p>I build the harnesses, MCP servers, and skills that turn a capable model into a dependable teammate — scoped tools, deterministic orchestration, verification gates, and runbooks a human can audit. I care about the boring parts: clear interfaces, small well-bounded units, and systems you can reason about at 2 a.m.</p>
     </div>
-    -->
+  </section>
 
-    <!-- Intro Header -->
-    <header class="masthead">
-      <div class="intro-body">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto mask" id="intro-div">
-              <!-- <h1 class="brand-heading">Jake Nelson</h1> -->
-              <p class="intro-text">Javascript developer. React fan. FreeCodeCamp alum. Music lover. Lifelong learner and seeker of knowledge.</p>
-              <a href="#about" class="btn btn-circle js-scroll-trigger">
-                <i class="fa fa-angle-double-down animated"></i>
-              </a>
-            </div>
-          </div>
+  <section class="section" id="ai">
+    <h2>AI-assisted engineering</h2>
+    <div class="body">
+      <p>Work across the software development lifecycle, delivered as reusable agent infrastructure rather than one-off prompts.</p>
+      <ul>
+        <li><strong>MCP server.</strong> Designed and built a Model Context Protocol server exposing internal systems as typed, scoped tools so agents can act on real data with least-privilege access and auditable calls.</li>
+        <li><strong>Custom skills library.</strong> Authored a suite of skills that package repeatable engineering workflows — brainstorming and spec-writing, plan execution, TDD loops, code review, release and deploy runbooks — so an agent picks the right procedure instead of improvising.</li>
+        <li><strong>Harness engineering.</strong> Built orchestration that fans work out to parallel subagents, routes results through adversarial verification, and gates merges on evidence rather than assertions. Designed for resumability and cheap failure.</li>
+        <li><strong>Multi-agent systems in production.</strong> Architected an event-driven trading system that routes live news through a five-agent LLM pipeline into structured signals, with layered risk controls and circuit breakers. <a href="work.html#edgeseeker">Case study →</a></li>
+      </ul>
+      <ul class="tags" aria-label="Tools">
+        <li>Claude Code</li><li>Anthropic API</li><li>MCP</li><li>tool use</li><li>structured outputs</li><li>eval harnesses</li><li>prompt caching</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <h2>Experience</h2>
+    <div class="body">
+      <!--
+        TODO (Jake): replace the placeholder entries below with real roles.
+        Pattern: one <article class="entry"> per role, newest first.
+        Keep 2–4 bullets per role, each leading with an outcome and a number where you have one.
+      -->
+      <article class="entry">
+        <div class="when">2022 — present</div>
+        <div>
+          <h3>Senior Software Engineer <span class="org">TODO Company</span></h3>
+          <p class="summary">TODO: one line on the product and your remit.</p>
+          <ul>
+            <li>TODO: outcome-led bullet (what changed, for whom, by how much).</li>
+            <li>TODO: bullet on architecture or platform ownership.</li>
+            <li>TODO: bullet on AI-assisted workflow you introduced and its effect on cycle time or quality.</li>
+          </ul>
+          <ul class="tags"><li>React</li><li>TypeScript</li><li>Node</li><li>TODO</li></ul>
         </div>
-      </div>
-    </header>
+      </article>
 
-    <!-- About Section -->
-    <section id="about" class="content-section text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>About Me</h2>
-            <p>I am a developer looking to further my knowledge base in all aspects of programming.</p>
-            <p>To me, programming is not so much about any given language or framework as it is about solving problems, and having the right tools to do so.</p>
-            <p>That being said, most of my experience to date has been in the Javascript ecosystem (Javascript, React, Node, MongoDB, some MySQL.</p>
-            <p>Most of my professional work thus far has been done on the front end, but I would be thrilled to work in a full stack capacity given a good learning environment.</p> 
-            <p>Feel free to have a look through my projects and repositories listed here. If you have any questions, reach out!</p>
-          </div>
+      <article class="entry">
+        <div class="when">2019 — 2022</div>
+        <div>
+          <h3>Software Engineer <span class="org">TODO Company</span></h3>
+          <p class="summary">TODO: one line on the product and your remit.</p>
+          <ul>
+            <li>TODO: outcome-led bullet.</li>
+            <li>TODO: outcome-led bullet.</li>
+          </ul>
+          <ul class="tags"><li>React</li><li>Node</li><li>TODO</li></ul>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- Download Section -->
-    <section id="download" class="download-section content-section text-center">
-      <div class="container">
-        <div class="col-lg-8 mx-auto">
-          <h2>Portfolio</h2>
-          <div class="row" id="projects"></div>
+      <article class="entry">
+        <div class="when">2016 — 2019</div>
+        <div>
+          <h3>Front-end Engineer <span class="org">TODO Company</span></h3>
+          <p class="summary">TODO: one line on the product and your remit.</p>
+          <ul>
+            <li>TODO: outcome-led bullet.</li>
+            <li>TODO: outcome-led bullet.</li>
+          </ul>
+          <ul class="tags"><li>JavaScript</li><li>React</li><li>TODO</li></ul>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- Contact Section -->
-    <section id="contact" class="content-section text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Contact</h2>
-            <p>Questions / comments? Have an interesting project? I'd love to hear from you!</p>
-            <ul class="list-inline banner-social-buttons">
-              <li class="list-inline-item">
-                  <a href="https://www.linkedin.com/in/jakewanders" target="_blank" class="btn btn-default btn-lg">
-                    <i class="fa fa-linkedin fa-fw"></i>
-                    <span class="network-name">LinkedIn</span>
-                  </a>
-                </li>
-              <li class="list-inline-item">
-                <a href="https://twitter.com/jakewanders" target="_blank" class="btn btn-default btn-lg">
-                  <i class="fa fa-twitter fa-fw"></i>
-                  <span class="network-name">Twitter</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://github.com/jakewanders" target="_blank" class="btn btn-default btn-lg">
-                  <i class="fa fa-github fa-fw"></i>
-                  <span class="network-name">Github</span>
-                </a>
-              </li>
-            </ul>
-          </div>
+      <p class="todo no-print">Placeholder roles — employer names, dates, and bullets need to be filled in before this page is shared.</p>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="body">
+      <dl class="skills">
+        <dt>languages</dt><dd>TypeScript, JavaScript (ES2015+), Python, SQL, HTML &amp; CSS</dd>
+        <dt>front end</dt><dd>React, Next.js, state management (Redux, React Query), accessibility, performance and Core Web Vitals, design systems</dd>
+        <dt>back end</dt><dd>Node, Express, REST and WebSocket APIs, PostgreSQL, Redis, MongoDB, queues and schedulers</dd>
+        <dt>ai &amp; agents</dt><dd>Anthropic API, MCP server design, Claude Code skills and hooks, multi-agent orchestration, eval and verification harnesses</dd>
+        <dt>practice</dt><dd>TDD, code review, CI/CD (GitHub Actions), Docker, observability, technical writing and runbooks</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <h2>Selected work</h2>
+    <div class="body">
+      <article class="entry">
+        <div class="when">2026</div>
+        <div>
+          <h3><a href="work.html#edgeseeker">EdgeSeeker</a></h3>
+          <p class="summary">Automated prediction-market trading system: news-driven multi-agent LLM pipeline plus a low-latency arbitrage engine, with layered risk management.</p>
         </div>
-      </div>
-    </section>
+      </article>
+      <article class="entry">
+        <div class="when">2026</div>
+        <div>
+          <h3><a href="work.html#sitelaunch">Site-launch pipeline</a></h3>
+          <p class="summary">Turnkey, agent-driven pipeline that scaffolds, fills, and audits Lighthouse-100 client sites from shared Next.js templates and typed content schemas.</p>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="when">2021</div>
+        <div>
+          <h3><a href="work.html#hand-in-hand">Hand in Hand</a></h3>
+          <p class="summary">TypeScript/React prototype built for World Vision at #HACK2021, with per-component tests and a Redux data layer.</p>
+        </div>
+      </article>
+      <p class="mono"><a href="work.html">All selected work →</a></p>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container text-center">
-        <p>&copy; Jake Nelson 2018</p>
-      </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/grayscale.js"></script>
-
-  </body>
-
+  <footer class="colophon mono">
+    <span>Jake Nelson · <span id="year">2026</span></span>
+    <span>Plain HTML and CSS, no framework. <a href="https://github.com/jakewanders/jakewanders.github.io">Source</a></span>
+  </footer>
+</div>
+<script src="assets/theme.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
 </html>

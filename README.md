@@ -1,71 +1,91 @@
-# [Start Bootstrap - Grayscale](https://startbootstrap.com/template-overviews/grayscale/)
+# jakewanders.github.io
 
-[Grayscale](http://startbootstrap.com/template-overviews/grayscale/) is a multipurpose, one page HTML theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+Personal résumé site for Jake Nelson. Live at **https://jakewanders.github.io**.
 
-## Preview
+Plain HTML + CSS + ~40 lines of JS. No framework, no package manager, no build step. What is in `master` is what is served.
 
-[![Grayscale Preview](https://startbootstrap.com/assets/img/templates/grayscale.jpg)](https://blackrockdigital.github.io/startbootstrap-grayscale/)
+```
+index.html            résumé (the home page)
+work.html             selected projects
+assets/site.css       all styles; light/dark tokens at the top
+assets/theme.js       theme toggle (persists to localStorage)
+misc/                 privacy policy / terms pages for other apps — keep
+tiktok*.txt           TikTok developer domain verification — keep
+.github/workflows/    deploy pipeline
+docs/superpowers/     design specs
+```
 
-**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-grayscale/)**
+## Editing content
 
-## Status
+Everything is in the HTML. To update the résumé, edit `index.html`; to add a project, copy a `<article class="card">` block in `work.html`. Preview locally with any static server:
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-grayscale/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-grayscale.svg)](https://www.npmjs.com/package/startbootstrap-grayscale)
-[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-grayscale.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-grayscale)
-[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-grayscale/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-grayscale)
-[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-grayscale/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-grayscale?type=dev)
+```bash
+python3 -m http.server 8000   # then open http://localhost:8000
+```
 
-## Download and Installation
+Print preview (Cmd/Ctrl+P) on the résumé page produces a clean PDF — the print stylesheet hides nav and the theme toggle.
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/grayscale/)
-* Install via npm: `npm i startbootstrap-grayscale`
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-grayscale.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-grayscale)
+## Deploy playbook
 
-## Usage
+### How deploys happen
 
-### Basic Usage
+Every push to `master` runs `.github/workflows/deploy.yml`, which uploads the repo root as a Pages artifact and deploys it. Typical time from push to live: under a minute. You can also trigger it by hand from the Actions tab ("Run workflow") or with:
 
-After downloading, simply edit the HTML and CSS files included with the template in your favorite text editor to make changes. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
+```bash
+gh workflow run deploy.yml
+```
 
-### Advanced Usage
+### Verify a deploy
 
-After installation, run `npm install` and then run `gulp dev` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
+```bash
+gh run list --workflow deploy.yml --limit 3      # status of recent runs
+gh run watch                                     # follow the latest run
+curl -sI https://jakewanders.github.io | head -1 # expect HTTP/2 200
+```
 
-#### Gulp Tasks
+If the run is green but the site looks stale, it is CDN cache: hard-refresh, or check the `etag` header changed.
 
-- `gulp` the default task that builds everything
-- `gulp dev` browserSync opens the project in your default browser and live reloads when changes are made
-- `gulp sass` compiles SCSS files into CSS
-- `gulp minify-css` minifies the compiled CSS file
-- `gulp minify-js` minifies the themes JS file
-- `gulp copy` copies dependencies from node_modules to the vendor directory
+### Roll back
 
-## Bugs and Issues
+Pages serves whatever the last successful run deployed. To roll back, revert the commit and push:
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-grayscale/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/grayscale/).
+```bash
+git revert <bad-sha> && git push
+```
 
-## Custom Builds
+or re-run an older green run from the Actions tab ("Re-run all jobs").
 
-You can hire Start Bootstrap to create a custom build of any template, or create something from scratch using Bootstrap. For more information, visit the **[custom design services page](https://startbootstrap.com/bootstrap-design-services/)**.
+### One-time setup (already done on 2026-08-20 — recorded here so it can be redone)
 
-## About
+The repo must be **public** (GitHub Pages on a private repo requires a paid plan — this was the reason the site was dark), and Pages must be set to build from **GitHub Actions**, not from a branch.
 
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+```bash
+gh repo edit jakewanders/jakewanders.github.io --visibility public --accept-visibility-change-consequences
+gh api -X POST repos/jakewanders/jakewanders.github.io/pages -f build_type=workflow
+gh api repos/jakewanders/jakewanders.github.io/pages --jq '{build_type, html_url, status}'
+```
 
-* https://startbootstrap.com
-* https://twitter.com/SBootstrap
+Equivalent in the UI: Settings → General → Danger Zone → Change visibility; Settings → Pages → Source: *GitHub Actions*.
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
+### Access needed to operate this (for a human or an agent)
 
-* http://davidmiller.io
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
+| Need | How it is provided |
+|---|---|
+| Push to `master` | SSH key or `gh auth` token with `repo` scope |
+| Run / inspect workflows, change Pages settings | `gh` CLI logged in as `jakewanders` with `repo` and `workflow` scopes (`gh auth login -s repo,workflow`) |
+| Deploy itself | No secret required — the workflow uses the repo's built-in `GITHUB_TOKEN` with `pages: write` + `id-token: write`, granted in the workflow file |
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+Check current auth with `gh auth status`. Nothing else (no PATs in repo secrets, no third-party services) is involved.
 
-## Copyright and License
+### Troubleshooting
 
-Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/gh-pages/LICENSE) license.
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| Site 404s, no runs in Actions | Repo is private, or Pages not enabled | Run the one-time setup commands above |
+| Run fails at `configure-pages` | Pages source is "branch", not "Actions" | `gh api -X PUT repos/jakewanders/jakewanders.github.io/pages -f build_type=workflow` |
+| Run fails at `deploy-pages` with a permissions error | `permissions:` block in the workflow was edited | Restore `pages: write` and `id-token: write` |
+| New page returns 404 but others work | File not committed, or wrong case in filename | `git ls-files` to confirm it's tracked |
+
+## History
+
+On 2026-08-20 the repo was rewritten with `git filter-repo` to drop ~170 MB of hero images and a 2018 Bootstrap template from history. A full pre-rewrite backup lives at `~/repos/jakewanders.github.io.pre-rewrite.bundle` on Jake's machine (`git clone <bundle>` restores it). Any old clone must be re-cloned, not pulled.
