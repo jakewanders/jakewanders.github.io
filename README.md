@@ -10,7 +10,6 @@ work.html             selected projects
 assets/site.css       all styles; light/dark tokens at the top
 assets/theme.js       theme toggle (persists to localStorage)
 misc/                 privacy policy / terms pages for other apps — keep
-tiktok*.txt           TikTok developer domain verification — keep
 .github/workflows/    deploy pipeline
 docs/superpowers/     design specs
 ```
@@ -86,7 +85,3 @@ Check current auth with `gh auth status`. Nothing else (no PATs in repo secrets,
 | Run fails at `configure-pages` | Pages source is "branch", not "Actions" | `gh api -X PUT repos/jakewanders/jakewanders.github.io/pages -f build_type=workflow` |
 | Run fails at `deploy-pages` with a permissions error | `permissions:` block in the workflow was edited | Restore `pages: write` and `id-token: write` |
 | New page returns 404 but others work | File not committed, or wrong case in filename | `git ls-files` to confirm it's tracked |
-
-## History
-
-On 2026-08-20 the repo was rewritten with `git filter-repo` to drop ~170 MB of hero images and a 2018 Bootstrap template from history. A full pre-rewrite backup lives at `~/repos/jakewanders.github.io.pre-rewrite.bundle` on Jake's machine (`git clone <bundle>` restores it). Any old clone must be re-cloned, not pulled.

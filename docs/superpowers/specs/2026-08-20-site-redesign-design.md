@@ -12,7 +12,7 @@ Date: 2026-08-20. Approved in chat by Jake.
 - Repo becomes **public** (Pages on private repos needs Pro).
 - History rewrite + force-push: **yes**.
 - Links: GitHub `jakewanders`, LinkedIn `linkedin.com/in/jnelson180`, email `jnelson180@gmail.com`. No Twitter.
-- Keep `tiktok*.txt` verification files and `misc/privacy_policy.html`, `misc/terms_of_service.html` at their current paths.
+- Keep `misc/privacy_policy.html`, `misc/terms_of_service.html` at their current paths. (TikTok verification files were removed on 2026-08-21 at Jake's request.)
 
 ## Architecture
 - Pure static: `index.html` (resume), `work.html` (selected projects), `assets/site.css`, `assets/theme.js`. No framework, no npm, no build step.

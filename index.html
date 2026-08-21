@@ -27,8 +27,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=8c6863d">
+  <!-- Fonts load without blocking render; system fallbacks paint first. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/site.css?v=a11y1">
 </head>
 <body>
 <div class="page">
@@ -47,6 +50,7 @@
     </div>
   </header>
 
+  <main id="content">
   <section class="masthead">
     <h1>Jake Nelson</h1>
     <p class="where">Remote, US (TX)</p>
@@ -196,12 +200,14 @@
     </div>
   </section>
 
+  </main>
+
   <footer class="colophon mono">
     <span>Jake Nelson · <span id="year">2026</span></span>
     <span>Plain HTML and CSS, no framework. <a href="https://github.com/jakewanders/jakewanders.github.io">Source</a></span>
   </footer>
 </div>
-<script src="assets/theme.js?v=8c6863d"></script>
+<script src="assets/theme.js?v=a11y1"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
