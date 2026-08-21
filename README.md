@@ -55,7 +55,7 @@ git revert <bad-sha> && git push
 
 or re-run an older green run from the Actions tab ("Re-run all jobs").
 
-### One-time setup (recorded here so it can be redone)
+### One-time setup (done 2026-08-21 — recorded here so it can be redone)
 
 The repo must be **public** (GitHub Pages on a private repo requires a paid plan — this was the reason the site was dark), and Pages must be set to build from **GitHub Actions**, not from a branch.
 
