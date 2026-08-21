@@ -186,12 +186,14 @@ li::marker { color: var(--muted); }
 
 .lede { font-size: 1.125rem; color: var(--ink-2); }
 
-/* entries (experience, projects) — date in the rail, content to the right */
+/* sections made of dated entries: label gets its own row, dates take the rail */
+.section.entries { grid-template-columns: 1fr; row-gap: 1.25rem; }
+.section.entries > h2 { padding-top: 0; }
+
 .entry {
   display: grid;
-  grid-template-columns: var(--rail) minmax(0, 1fr);
+  grid-template-columns: var(--rail) minmax(0, var(--measure));
   column-gap: var(--gap);
-  margin-left: calc(-1 * (var(--rail) + var(--gap)));
   margin-bottom: 2.25rem;
 }
 .entry:last-child { margin-bottom: 0; }
@@ -271,7 +273,8 @@ footer.colophon {
   .topbar { margin-bottom: 3rem; }
   .masthead { margin-bottom: 3rem; }
   .section { grid-template-columns: 1fr; row-gap: 1rem; padding: 1.75rem 0; }
-  .entry { grid-template-columns: 1fr; margin-left: 0; row-gap: 0.25rem; }
+  .entry { grid-template-columns: 1fr; row-gap: 0.25rem; }
+  .section.entries { row-gap: 1rem; }
   .skills { grid-template-columns: 1fr; gap: 0.25rem; }
   .skills dd { margin-bottom: 0.6rem; }
 }
