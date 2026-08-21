@@ -274,6 +274,9 @@ a.card:hover { border-color: var(--accent); transform: translateY(-1px); }
 .card p { color: var(--ink-2); }
 .card .tags { margin-top: 0.85rem; }
 .card .status { color: var(--accent); }
+.card .status a { color: inherit; text-decoration: none; }
+.card .status a:hover { text-decoration: underline; }
+.card code { font-family: var(--font-mono); font-size: 0.875em; }
 
 footer.colophon {
   margin-top: 4rem;
