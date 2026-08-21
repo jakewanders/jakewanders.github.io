@@ -23,7 +23,7 @@ Date: 2026-08-20. Approved in chat by Jake.
 
 ## Content
 - Header: name, title line, links. Summary (3 lines). Experience (slots marked `TODO` where Jake must supply employer/dates/bullets). "AI-assisted engineering" section (MCP server, custom skills, harness work, orchestration across SDLC). Skills grouped. Selected work (3 cards) linking to `/work`. Contact.
-- Work page: EdgeSeeker (private — case study), Site-launch pipeline (private — case study), hand-in-hand (public TS), rentahuman-bot-discord (public, architecture docs). Public links only where a real repo exists.
+- Work page: LifeDash, EdgeSeeker, Site-launch pipeline (all private — case studies). hand-in-hand and rentahuman-bot-discord were removed on 2026-08-21.
 
 ## Repo cleanup
 Delete: `old/ vendor/ img/ coffee/ piano/ weather/ css/ scss/ js/ misc/*.png misc/*.jpg misc/*.wav misc/bgs gulpfile.js package*.json .travis.yml public LICENSE(template)`. Then `git filter-repo` to purge those paths from all history; local bundle backup at `~/repos/jakewanders.github.io.pre-rewrite.bundle`.
