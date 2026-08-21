@@ -55,7 +55,7 @@ git revert <bad-sha> && git push
 
 or re-run an older green run from the Actions tab ("Re-run all jobs").
 
-### One-time setup (already done on 2026-08-20 — recorded here so it can be redone)
+### One-time setup (recorded here so it can be redone)
 
 The repo must be **public** (GitHub Pages on a private repo requires a paid plan — this was the reason the site was dark), and Pages must be set to build from **GitHub Actions**, not from a branch.
 
@@ -65,14 +65,15 @@ gh api -X POST repos/jakewanders/jakewanders.github.io/pages -f build_type=workf
 gh api repos/jakewanders/jakewanders.github.io/pages --jq '{build_type, html_url, status}'
 ```
 
-Equivalent in the UI: Settings → General → Danger Zone → Change visibility; Settings → Pages → Source: *GitHub Actions*.
+Equivalent in the UI: Settings → General → Danger Zone → Change visibility; Settings → Pages → Build and deployment → Source: *GitHub Actions*. After either, re-run the last workflow (`gh run rerun --failed $(gh run list --workflow deploy.yml --limit 1 --json databaseId --jq '.[0].databaseId')`) or push any commit.
 
 ### Access needed to operate this (for a human or an agent)
 
 | Need | How it is provided |
 |---|---|
 | Push to `master` | SSH key or `gh auth` token with `repo` scope |
-| Run / inspect workflows, change Pages settings | `gh` CLI logged in as `jakewanders` with `repo` and `workflow` scopes (`gh auth login -s repo,workflow`) |
+| Inspect / re-run workflows | `gh` CLI logged in as `jakewanders`. Fine-grained PAT: **Actions: read** (or classic token with `repo` scope) |
+| Enable Pages, change visibility (one-time setup only) | Fine-grained PAT additionally needs **Administration: write** and **Pages: write** on this repo. Without them the setup commands return `HTTP 403: Resource not accessible by personal access token` and must be done in the web UI instead |
 | Deploy itself | No secret required — the workflow uses the repo's built-in `GITHUB_TOKEN` with `pages: write` + `id-token: write`, granted in the workflow file |
 
 Check current auth with `gh auth status`. Nothing else (no PATs in repo secrets, no third-party services) is involved.
