@@ -23,15 +23,15 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #0f1214;
-  --surface: #161a1d;
-  --ink: #e8eaec;
-  --ink-2: #c2c8ce;
-  --muted: #8b949c;
-  --rule: #262c31;
-  --accent: #5cc0c6;
-  --accent-ink: #0f1214;
-  --focus: #5cc0c6;
+  --bg: #1f2225;
+  --surface: #272b2f;
+  --ink: #f2f4f6;
+  --ink-2: #d3d8dd;
+  --muted: #a3abb3;
+  --rule: #3d434a;
+  --accent: #6fcfd5;
+  --accent-ink: #1f2225;
+  --focus: #6fcfd5;
   color-scheme: dark;
 }
 
