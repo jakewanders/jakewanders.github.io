@@ -116,6 +116,22 @@ li::marker { color: var(--muted); }
 .nav a:hover { color: var(--ink); }
 .nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
 
+.topbar-actions { display: flex; align-items: center; gap: 1.25rem; }
+.print-link {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.print-link:hover { color: var(--accent); }
+
+.masthead .where {
+  margin-top: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
 /* theme toggle */
 .theme-toggle {
   appearance: none;
@@ -290,7 +306,7 @@ footer.colophon {
   @page { margin: 0.6in; }
   body { font-size: 10.5pt; line-height: 1.4; }
   .page { max-width: none; padding: 0; }
-  .topbar, .theme-toggle, .nav, .no-print { display: none !important; }
+  .topbar, .theme-toggle, .nav, .print-link, .no-print { display: none !important; }
   .masthead { margin-bottom: 1.5rem; }
   .masthead h1 { font-size: 22pt; }
   .masthead .role { font-size: 12pt; }
