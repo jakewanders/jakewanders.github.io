@@ -307,7 +307,13 @@ footer.colophon {
 /* ---------- print: the page is the résumé ---------- */
 
 @media print {
-  :root { --bg: #fff; --surface: #fff; --ink: #000; --ink-2: #222; --muted: #555; --rule: #ccc; --accent: #0f6e76; }
+  /* Both selectors so this beats :root[data-theme="dark"] when printing from dark mode. */
+  :root, :root[data-theme="dark"] {
+    --bg: #fff; --surface: #fff;
+    --ink: #1a1a1a; --ink-2: #222; --muted: #3a3a3a;
+    --rule: #ccc; --accent: #0f6e76; --accent-ink: #fff; --focus: #0f6e76;
+    color-scheme: light;
+  }
   @page { margin: 0.6in; }
   body { font-size: 10.5pt; line-height: 1.4; }
   .page { max-width: none; padding: 0; }
