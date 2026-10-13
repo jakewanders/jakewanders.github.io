@@ -4,6 +4,9 @@ on:
   push:
     branches: [master]
   workflow_dispatch:
+  # Rebuild daily so posts published in Sanity show up on /blog without a push.
+  schedule:
+    - cron: "0 13 * * *"
 
 permissions:
   contents: read
@@ -24,6 +27,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - name: Build blog from Sanity
+        run: python3 scripts/build_blog.py
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:

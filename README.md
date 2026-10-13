@@ -2,11 +2,12 @@
 
 Personal résumé site for Jake Nelson. Live at **https://jakewanders.github.io**.
 
-Plain HTML + CSS + ~40 lines of JS. No framework, no package manager, no build step. What is in `master` is what is served.
+Plain HTML + CSS + ~40 lines of JS. No framework, no package manager. The only build step is `scripts/build_blog.py` (stdlib Python), which CI runs to generate `/blog` from Sanity; everything else in `master` is served as-is.
 
 ```
 index.html            résumé (the home page)
 work.html             selected projects
+scripts/build_blog.py generates blog/ (gitignored) from the Sanity posts twoweeksites.com uses
 assets/site.css       all styles; light/dark tokens at the top
 assets/theme.js       theme toggle (persists to localStorage)
 misc/                 privacy policy / terms pages for other apps — keep
@@ -21,6 +22,12 @@ Everything is in the HTML. To update the résumé, edit `index.html`; to add a p
 ```bash
 python3 -m http.server 8000   # then open http://localhost:8000
 ```
+
+### Blog
+
+Posts are written and published in Sanity (see the `site-launch` repo's `publish-post` skill); this site never edits them. The deploy workflow runs `python3 scripts/build_blog.py` before uploading, and also runs daily at 13:00 UTC so new posts appear without a push. To publish a new post here immediately, run `gh workflow run deploy.yml`. Post pages set `rel=canonical` to `twoweeksites.com/post/<slug>` so search engines don't treat them as duplicate content. If Sanity is unreachable or returns no posts, the build fails and Pages keeps serving the last good deploy.
+
+Preview locally: `python3 scripts/build_blog.py && python3 -m http.server 8000`, then open http://localhost:8000/blog/.
 
 Print preview (Cmd/Ctrl+P) on the résumé page produces a clean PDF — the print stylesheet hides nav and the theme toggle.
 
@@ -42,7 +49,7 @@ gh run watch                                     # follow the latest run
 curl -sI https://jakewanders.github.io | head -1 # expect HTTP/2 200
 ```
 
-If the run is green but the site looks stale, it is browser/CDN cache. The HTML links `assets/site.css?v=<sha>` and `assets/theme.js?v=<sha>`; **bump that `?v=` value in both HTML files whenever you change CSS or JS** (e.g. `sed -i "s/?v=[a-f0-9]*/?v=$(git rev-parse --short HEAD)/" index.html work.html`) so visitors never see an old stylesheet.
+If the run is green but the site looks stale, it is browser/CDN cache. The HTML links `assets/site.css?v=<sha>` and `assets/theme.js?v=<sha>`; **bump that `?v=` value in both HTML files whenever you change CSS or JS** (e.g. `sed -i "s/?v=[a-f0-9]*/?v=$(git rev-parse --short HEAD)/" index.html work.html` and update `ASSET_VERSION` in `scripts/build_blog.py`) so visitors never see an old stylesheet.
 
 ### Roll back
 
