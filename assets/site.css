@@ -121,7 +121,8 @@ li::marker { color: var(--muted); }
 }
 
 .nav { display: flex; gap: 1.5rem; }
-.nav a {
+/* .print-link shares the tab styling so it lines up with and looks like the nav */
+.nav a, .print-link {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   text-decoration: none;
@@ -129,17 +130,10 @@ li::marker { color: var(--muted); }
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
 }
-.nav a:hover { color: var(--ink); }
+.nav a:hover, .print-link:hover { color: var(--ink); }
 .nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
 
 .topbar-actions { display: flex; align-items: center; gap: 1.25rem; }
-.print-link {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  color: var(--muted);
-  text-decoration: none;
-}
-.print-link:hover { color: var(--accent); }
 
 .masthead .where {
   margin-top: 0.35rem;
