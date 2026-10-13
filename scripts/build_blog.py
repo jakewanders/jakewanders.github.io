@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate blog/ from the posts in Sanity (the same posts twoweeksites.com/blog shows).
+"""Generate blog/ from the posts in Sanity (the same posts sitelaunchrva.com/blog shows).
 
 Stdlib only, so CI needs nothing but python3. Output is static HTML:
 
@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "blog"
 
 SANITY_URL = "https://zxkyssqi.apicdn.sanity.io/v2025-02-19/data/query/production"
-SOURCE_SITE = "https://twoweeksites.com"
+SOURCE_SITE = "https://sitelaunchrva.com"
 SITE = "https://jakewanders.github.io"
 ASSET_VERSION = "print1"  # keep in sync with the ?v= in index.html, work/ and contact/
 
@@ -229,7 +229,7 @@ def render_index(posts):
       </article>""")
     main = f"""  <section class="masthead">
     <h1>Blog</h1>
-    <p class="role">Plain-English notes on building, securing, and speeding up small-business websites. Also published on <a href="{SOURCE_SITE}/blog">twoweeksites.com</a>.</p>
+    <p class="role">Plain-English notes on building, securing, and speeding up small-business websites. Also published on <a href="{SOURCE_SITE}/blog">sitelaunchrva.com</a>.</p>
   </section>
 
   <section class="section entries">
@@ -261,12 +261,12 @@ def render_post(p):
     <div class="prose">
 {render_body(p.get('body'))}
     </div>
-    <p class="mono post-origin">Originally published on <a href="{html.escape(original)}">twoweeksites.com</a>.</p>
+    <p class="mono post-origin">Originally published on <a href="{html.escape(original)}">sitelaunchrva.com</a>.</p>
   </article>"""
     return page(
         title=f"{title} — Jake Nelson",
         description=summary(p.get("body")) or title,
-        # The post's home is twoweeksites.com; point search engines there so the copies don't compete.
+        # The post's home is sitelaunchrva.com; point search engines there so the copies don't compete.
         canonical=original,
         og_type="article",
         main=main,

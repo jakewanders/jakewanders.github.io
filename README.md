@@ -9,7 +9,7 @@ index.html            résumé (the home page)
 work/index.html       selected projects (served at /work/)
 contact/index.html    email, GitHub, LinkedIn (served at /contact/)
 work.html             redirect stub so old /work.html links still land on /work/
-scripts/build_blog.py generates blog/ (gitignored) from the Sanity posts twoweeksites.com uses
+scripts/build_blog.py generates blog/ (gitignored) from the Sanity posts sitelaunchrva.com uses
 scripts/inline_assets.py  CI only: inlines site.css + theme.js into every page (rewrites files in place)
 assets/fonts/         self-hosted IBM Plex woff2 + license
 assets/site.css       all styles; light/dark tokens at the top
@@ -29,7 +29,7 @@ python3 -m http.server 8000   # then open http://localhost:8000
 
 ### Blog
 
-Posts are written and published in Sanity (see the `site-launch` repo's `publish-post` skill); this site never edits them. The deploy workflow runs `python3 scripts/build_blog.py` before uploading, and also runs daily at 13:00 UTC so new posts appear without a push. To publish a new post here immediately, run `gh workflow run deploy.yml`. Post pages set `rel=canonical` to `twoweeksites.com/post/<slug>` so search engines don't treat them as duplicate content. If Sanity is unreachable or returns no posts, the build fails and Pages keeps serving the last good deploy.
+Posts are written and published in Sanity (see the `site-launch` repo's `publish-post` skill); this site never edits them. The deploy workflow runs `python3 scripts/build_blog.py` before uploading, and also runs daily at 13:00 UTC so new posts appear without a push. To publish a new post here immediately, run `gh workflow run deploy.yml`. Post pages set `rel=canonical` to `sitelaunchrva.com/post/<slug>` so search engines don't treat them as duplicate content. If Sanity is unreachable or returns no posts, the build fails and Pages keeps serving the last good deploy.
 
 Preview locally: `python3 scripts/build_blog.py && python3 -m http.server 8000`, then open http://localhost:8000/blog/.
 
