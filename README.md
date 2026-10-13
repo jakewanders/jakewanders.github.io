@@ -2,7 +2,7 @@
 
 Personal résumé site for Jake Nelson. Live at **https://jakewanders.github.io**.
 
-Plain HTML + CSS + ~40 lines of JS. No framework, no package manager. The only build step is `scripts/build_blog.py` (stdlib Python), which CI runs to generate `/blog` from Sanity; everything else in `master` is served as-is.
+Plain HTML + CSS + ~40 lines of JS. No framework, no package manager. CI runs two stdlib-Python steps before deploying: `scripts/build_blog.py` generates `/blog` from Sanity, then `scripts/inline_assets.py` copies `site.css` and `theme.js` into every page so first paint needs only the HTML request. Source pages keep normal `<link>`/`<script src>` tags, so editing and local preview are unchanged. Fonts (IBM Plex, latin subset, SIL OFL) are self-hosted in `assets/fonts/` with `font-display: optional` and preloaded, so text never reflows when they arrive.
 
 ```
 index.html            résumé (the home page)
@@ -10,6 +10,8 @@ work/index.html       selected projects (served at /work/)
 contact/index.html    email, GitHub, LinkedIn (served at /contact/)
 work.html             redirect stub so old /work.html links still land on /work/
 scripts/build_blog.py generates blog/ (gitignored) from the Sanity posts twoweeksites.com uses
+scripts/inline_assets.py  CI only: inlines site.css + theme.js into every page (rewrites files in place)
+assets/fonts/         self-hosted IBM Plex woff2 + license
 assets/site.css       all styles; light/dark tokens at the top
 assets/theme.js       theme toggle (persists to localStorage)
 misc/                 privacy policy / terms pages for other apps — keep
@@ -50,6 +52,8 @@ gh run list --workflow deploy.yml --limit 3      # status of recent runs
 gh run watch                                     # follow the latest run
 curl -sI https://jakewanders.github.io | head -1 # expect HTTP/2 200
 ```
+
+Lighthouse target is 100 in all four categories on every page; run it in an Incognito window (extensions skew Best Practices and add fake "unused JavaScript"). If you add a new font weight, add its `@font-face` in `site.css` and a preload line in each page and in `build_blog.py`.
 
 If the run is green but the site looks stale, it is browser/CDN cache. The HTML links `assets/site.css?v=<sha>` and `assets/theme.js?v=<sha>`; **bump that `?v=` value in every HTML page whenever you change CSS or JS** (e.g. `sed -i '' "s/?v=[a-z0-9]*/?v=$(git rev-parse --short HEAD)/" index.html work/index.html contact/index.html` and update `ASSET_VERSION` in `scripts/build_blog.py`) so visitors never see an old stylesheet.
 

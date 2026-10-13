@@ -28,7 +28,7 @@ OUT = ROOT / "blog"
 SANITY_URL = "https://zxkyssqi.apicdn.sanity.io/v2025-02-19/data/query/production"
 SOURCE_SITE = "https://twoweeksites.com"
 SITE = "https://jakewanders.github.io"
-ASSET_VERSION = "gutter1"  # keep in sync with the ?v= in index.html, work/ and contact/
+ASSET_VERSION = "perf1"  # keep in sync with the ?v= in index.html, work/ and contact/
 
 QUERY = """
 *[_type == "post" && defined(slug.current) && !(_id in path("drafts.**"))]{
@@ -143,7 +143,10 @@ FAVICON = (
     "height='32' rx='6' fill='%230f6e76'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' "
     "fill='white' text-anchor='middle'%3Ejn%3C/text%3E%3C/svg%3E"
 )
-FONTS = "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+FONTS = ["ibm-plex-sans-400", "ibm-plex-sans-500", "ibm-plex-sans-600", "ibm-plex-mono-400", "ibm-plex-mono-500"]
+PRELOADS = "\n".join(
+    f'  <link rel="preload" href="/assets/fonts/{f}.woff2" as="font" type="font/woff2" crossorigin>' for f in FONTS
+)
 
 
 def page(*, title, description, canonical, og_type, main, footer_link):
@@ -175,11 +178,7 @@ def page(*, title, description, canonical, og_type, main, footer_link):
       document.documentElement.setAttribute("data-theme", t);
     }})();
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="{FONTS}">
-  <link rel="stylesheet" href="{FONTS}" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="{FONTS}"></noscript>
+{PRELOADS}
   <link rel="stylesheet" href="/assets/site.css?v={ASSET_VERSION}">
 </head>
 <body>
