@@ -28,7 +28,7 @@ OUT = ROOT / "blog"
 SANITY_URL = "https://zxkyssqi.apicdn.sanity.io/v2025-02-19/data/query/production"
 SOURCE_SITE = "https://twoweeksites.com"
 SITE = "https://jakewanders.github.io"
-ASSET_VERSION = "contact1"  # keep in sync with the ?v= in index.html, work/ and contact/
+ASSET_VERSION = "gutter1"  # keep in sync with the ?v= in index.html, work/ and contact/
 
 QUERY = """
 *[_type == "post" && defined(slug.current) && !(_id in path("drafts.**"))]{

@@ -39,7 +39,13 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  /* Always show the scrollbar track, even on short pages like /contact/, so the
+     centered column doesn't shift sideways between tabs when classic (non-overlay)
+     scrollbars are on. Overlay scrollbars draw nothing here. */
+  overflow-y: scroll;
+}
 
 body {
   margin: 0;
