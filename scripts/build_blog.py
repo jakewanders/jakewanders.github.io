@@ -28,7 +28,7 @@ OUT = ROOT / "blog"
 SANITY_URL = "https://zxkyssqi.apicdn.sanity.io/v2025-02-19/data/query/production"
 SOURCE_SITE = "https://twoweeksites.com"
 SITE = "https://jakewanders.github.io"
-ASSET_VERSION = "blog1"  # keep in sync with the ?v= in index.html and work.html
+ASSET_VERSION = "contact1"  # keep in sync with the ?v= in index.html, work/ and contact/
 
 QUERY = """
 *[_type == "post" && defined(slug.current) && !(_id in path("drafts.**"))]{
@@ -136,7 +136,7 @@ def fmt_date(iso):
     return d.strftime("%b %-d, %Y"), d.strftime("%Y-%m-%d")
 
 
-# ---------- page shell (mirrors work.html) ----------
+# ---------- page shell (mirrors work/index.html) ----------
 
 FAVICON = (
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' "
@@ -188,8 +188,9 @@ def page(*, title, description, canonical, og_type, main, footer_link):
   <header class="topbar">
     <nav class="nav" aria-label="Site">
       <a href="/">résumé</a>
-      <a href="/work.html">work</a>
+      <a href="/work/">work</a>
       <a href="/blog/" aria-current="page">blog</a>
+      <a href="/contact/">contact</a>
     </nav>
     <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
       <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>

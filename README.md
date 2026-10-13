@@ -6,7 +6,9 @@ Plain HTML + CSS + ~40 lines of JS. No framework, no package manager. The only b
 
 ```
 index.html            résumé (the home page)
-work.html             selected projects
+work/index.html       selected projects (served at /work/)
+contact/index.html    email, GitHub, LinkedIn (served at /contact/)
+work.html             redirect stub so old /work.html links still land on /work/
 scripts/build_blog.py generates blog/ (gitignored) from the Sanity posts twoweeksites.com uses
 assets/site.css       all styles; light/dark tokens at the top
 assets/theme.js       theme toggle (persists to localStorage)
@@ -17,7 +19,7 @@ docs/superpowers/     design specs
 
 ## Editing content
 
-Everything is in the HTML. To update the résumé, edit `index.html`; to add a project, copy a `<article class="card">` block in `work.html`. Preview locally with any static server:
+Everything is in the HTML. To update the résumé, edit `index.html`; to add a project, copy a `<article class="card">` block in `work/index.html`. Pages live in their own folder as `index.html` so URLs stay extension-free (`/work/`, not `/work.html`); link between pages and to `/assets/` with root-relative paths. The nav is repeated in each page and in `scripts/build_blog.py` — update all of them when adding a tab. Preview locally with any static server:
 
 ```bash
 python3 -m http.server 8000   # then open http://localhost:8000
@@ -49,7 +51,7 @@ gh run watch                                     # follow the latest run
 curl -sI https://jakewanders.github.io | head -1 # expect HTTP/2 200
 ```
 
-If the run is green but the site looks stale, it is browser/CDN cache. The HTML links `assets/site.css?v=<sha>` and `assets/theme.js?v=<sha>`; **bump that `?v=` value in both HTML files whenever you change CSS or JS** (e.g. `sed -i "s/?v=[a-f0-9]*/?v=$(git rev-parse --short HEAD)/" index.html work.html` and update `ASSET_VERSION` in `scripts/build_blog.py`) so visitors never see an old stylesheet.
+If the run is green but the site looks stale, it is browser/CDN cache. The HTML links `assets/site.css?v=<sha>` and `assets/theme.js?v=<sha>`; **bump that `?v=` value in every HTML page whenever you change CSS or JS** (e.g. `sed -i '' "s/?v=[a-z0-9]*/?v=$(git rev-parse --short HEAD)/" index.html work/index.html contact/index.html` and update `ASSET_VERSION` in `scripts/build_blog.py`) so visitors never see an old stylesheet.
 
 ### Roll back
 

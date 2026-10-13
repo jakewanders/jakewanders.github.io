@@ -2,97 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Work — Jake Nelson</title>
-  <meta name="description" content="Selected projects by Jake Nelson: an offline-first Next.js product, a multi-agent trading system, and an agent-driven site pipeline.">
-  <link rel="canonical" href="https://jakewanders.github.io/work.html">
-  <meta property="og:title" content="Work — Jake Nelson">
-  <meta property="og:description" content="Selected projects: multi-agent systems, AI-driven pipelines, TypeScript/React.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f6e76'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' fill='white' text-anchor='middle'%3Ejn%3C/text%3E%3C/svg%3E">
-  <script>
-    (function () {
-      // Read the saved theme from localStorage, then a cookie fallback, then the OS preference.
-      var t = null;
-      try { t = localStorage.getItem("theme"); } catch (e) {}
-      if (t !== "dark" && t !== "light") {
-        var m = document.cookie.match(/(?:^|; )theme=(dark|light)/);
-        if (m) t = m[1];
-      }
-      if (t !== "dark" && t !== "light") {
-        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      }
-      document.documentElement.setAttribute("data-theme", t);
-    })();
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Fonts load without blocking render; system fallbacks paint first. -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"></noscript>
-  <link rel="stylesheet" href="assets/site.css?v=blog1">
+  <!-- The work page moved to /work/; keep old links (and #anchors) working. -->
+  <link rel="canonical" href="https://jakewanders.github.io/work/">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url=/work/">
+  <script>location.replace("/work/" + location.hash);</script>
 </head>
 <body>
-<div class="page">
-
-  <header class="topbar">
-    <nav class="nav" aria-label="Site">
-      <a href="./">résumé</a>
-      <a href="work.html" aria-current="page">work</a>
-      <a href="blog/">blog</a>
-    </nav>
-    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-    </button>
-  </header>
-
-  <main id="content">
-  <section class="masthead">
-    <h1>Selected work</h1>
-    <p class="role">A short list, on purpose. Each is a system I designed and built end to end, written up as a case study.</p>
-  </section>
-
-  <section class="section">
-    <h2>Systems</h2>
-    <div class="body work-list">
-
-      <article class="card" id="lifedash">
-        <div class="kicker"><span>2026 · TypeScript, Next.js 16, React 19, Postgres</span><span class="status"><a href="https://lifechronicler.vercel.app/">live — sign-in required</a> · source private</span></div>
-        <h3>LifeDash</h3>
-        <p>A personal dashboard — multi-board kanban, mood and wellness, nutrition, habits, long-term notes — built as a single Next.js app on Vercel. The brief I set myself: a Trello-style board for one person that feels instant, survives bad Wi-Fi, and keeps the data private.</p>
-        <p><strong>Offline-first</strong>: the browser is the source of truth and the UI never waits on the network; state syncs to one API route that encrypts it (AES-256-GCM) before it touches Neon Postgres. <strong>Never lose an edit</strong>: versioned sync with optimistic concurrency — the server writes only if the version matches, otherwise the client merges per-entity by <code>updatedAt</code> with tombstones and retries. <strong>Testable by construction</strong>: a pure domain layer (types, Zod schemas, reducers) with no React or browser dependencies, feature modules that never import server code, and CI that runs typecheck → lint → unit with coverage thresholds → build → Playwright end-to-end on every PR. Light/dark theme, mobile layout, and an interview-style <em>system design doc</em> with diagrams.</p>
-        <ul class="tags"><li>TypeScript</li><li>Next.js</li><li>React</li><li>NextAuth</li><li>Neon Postgres</li><li>Zod</li><li>dnd-kit</li><li>Vitest</li><li>Playwright</li><li>GitHub Actions</li><li>Vercel</li></ul>
-      </article>
-
-      <article class="card" id="edgeseeker">
-        <div class="kicker"><span>2026 · Python, multi-agent LLM, WebSockets</span><span class="status">private — write-up on request</span></div>
-        <h3>EdgeSeeker</h3>
-        <p>An automated trading system for Kalshi prediction markets that runs two strategies side by side. A <strong>news-driven pipeline</strong> watches 50+ RSS feeds and a dozen Telegram channels, matches stories to open markets, and routes them through a five-agent LLM swarm (Claude, Gemini, GPT) that returns structured trade signals. A separate <strong>latency-arbitrage engine</strong> sits on Coinbase and Kalshi WebSockets and acts on crypto moves before the market maker reprices.</p>
-        <p>The interesting engineering is in the guardrails: every market is bucketed by certainty with its own sizing and exit rules; daily spend limits, per-event exposure caps, and drawdown circuit breakers sit in front of execution; and the whole thing is documented as a runbook, an architecture doc, and SQL analytics so it can be operated — and audited — by someone who didn't write it.</p>
-        <ul class="tags"><li>Python</li><li>asyncio</li><li>Anthropic API</li><li>multi-provider LLM routing</li><li>Redis</li><li>SQLite/Postgres</li><li>Telegram Bot API</li></ul>
-      </article>
-
-      <article class="card" id="sitelaunch">
-        <div class="kicker"><span>2026 · TypeScript, Next.js 15, agents</span><span class="status">private — write-up on request</span></div>
-        <h3>Site-launch pipeline</h3>
-        <p>A turnkey pipeline for producing small-business websites at agency scale. Shared packages — Zod content schemas per vertical, an SEO kit (schema.org, Open Graph, sitemaps), an accessibility-first component kit, and CMS config generators — feed per-vertical Next.js templates. A CLI scaffolds a new site; an audit script runs Lighthouse; agents fill content against the schemas. The demo site ships at Lighthouse 99/100/100/100.</p>
-        <p>Designed around Architecture Decision Records, runbooks, and playbooks from day one, because the point of the system is that it runs without the original author in the loop.</p>
-        <ul class="tags"><li>TypeScript</li><li>Next.js</li><li>Zod</li><li>pnpm workspaces</li><li>Lighthouse</li><li>agent workflows</li></ul>
-      </article>
-
-    </div>
-  </section>
-
-
-  </main>
-
-  <footer class="colophon mono">
-    <span>Jake Nelson · <span id="year">2026</span></span>
-    <span><a href="./">← résumé</a></span>
-  </footer>
-</div>
-<script src="assets/theme.js?v=blog1"></script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <p><a href="/work/">This page has moved to /work/.</a></p>
 </body>
 </html>
