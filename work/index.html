@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Work — Jake Nelson</title>
-  <meta name="description" content="Selected projects by Jake Nelson: an offline-first Next.js product, a multi-agent trading system, and an agent-driven site pipeline.">
+  <meta name="description" content="Selected projects by Jake Nelson: a multi-tenant SaaS with an isolated live demo, an offline-first Next.js product, a multi-agent trading system, and an agent-driven site pipeline.">
   <link rel="canonical" href="https://jakewanders.github.io/work/">
   <meta property="og:title" content="Work — Jake Nelson">
   <meta property="og:description" content="Selected projects: multi-agent systems, AI-driven pipelines, TypeScript/React.">
@@ -56,6 +56,14 @@
   <section class="section">
     <h2>Systems</h2>
     <div class="body work-list">
+
+      <article class="card" id="opsdesk">
+        <div class="kicker"><span>2026 · TypeScript, Next.js 16, React 19, Supabase</span><span class="status"><a href="https://opsdesk.sitelaunch.dev/demo">live demo</a> · source private</span></div>
+        <h3>OpsDesk</h3>
+        <p>A multi-tenant operations SaaS for small businesses: customers, a sales pipeline board, tasks, quotes with PDF, reports, and CSV import and export. I wrote the product spec, designed the interface, built the full stack and shipped it, with an isolated live demo that anyone can open without signing up.</p>
+        <p><strong>Isolation lives in the database, not just the UI</strong>: every workspace&rsquo;s rows are separated by Postgres row-level security, and one permission matrix drives both the buttons you see and the rules the server enforces. <strong>Accessible by test</strong>: pages are checked with axe in light and dark themes, at 375&nbsp;px and at 200% zoom, with keyboard-only walkthroughs; Lighthouse accessibility scored 100 on all 34 runs. <strong>Built with agents, under guardrails</strong>: a written spec and a dependency-ordered backlog, one issue at a time, nothing marked done without a recorded command result, tests broken on purpose to prove they fail, and a human decision for anything involving secrets, DNS or publishing.</p>
+        <ul class="tags"><li>TypeScript</li><li>Next.js</li><li>React</li><li>Postgres</li><li>Supabase</li><li>Row-level security</li><li>Playwright</li><li>Tailwind CSS</li><li>Accessibility</li><li>Netlify</li></ul>
+      </article>
 
       <article class="card" id="sitelaunchrva">
         <div class="kicker"><span>2026 · TypeScript, Next.js 15, React 19, Sanity</span><span class="status"><a href="https://sitelaunchrva.com/">live</a> · source private</span></div>
