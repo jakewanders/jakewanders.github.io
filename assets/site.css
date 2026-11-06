@@ -350,16 +350,17 @@ footer.colophon {
     color-scheme: light;
   }
   @page { margin: 0.6in; }
-  body { font-size: 10.5pt; line-height: 1.4; }
+  body { font-size: 10pt; line-height: 1.35; }
   .page { max-width: none; padding: 0; }
   .topbar, .theme-toggle, .nav, .print-link, .no-print { display: none !important; }
   .masthead { margin-bottom: 1.5rem; }
   .masthead h1 { font-size: 22pt; }
   .masthead .role { font-size: 12pt; }
-  .section { padding: 0.9rem 0; break-inside: avoid; }
-  .entry { margin-bottom: 0.9rem; break-inside: avoid; }
+  .section { padding: 0.7rem 0; break-inside: auto; }
+  .entry { margin-bottom: 0.7rem; break-inside: avoid; }
+  /* Entries are grids and can't split, so start the long Experience section on a fresh page
+     rather than strand its heading at the bottom of the previous one. */
+  #experience { break-before: page; }
   a { text-decoration: none; color: inherit; }
-  .links a::after { content: " " attr(href); color: var(--muted); }
-  .links a[href^="mailto"]::after { content: ""; }
   .todo { display: none; }
 }
