@@ -233,7 +233,7 @@ li::marker { color: var(--muted); }
 }
 .entry h3 { font-size: 1.0625rem; font-weight: 600; }
 .entry .org { color: var(--muted); font-weight: 400; }
-.entry .org::before { content: "·"; margin: 0 0.45em; color: var(--rule); }
+.entry .org { margin-left: 0.15em; }
 .entry .summary { color: var(--ink-2); margin-top: 0.3rem; }
 .entry ul { margin-top: 0.6rem; }
 .entry .tags { margin-top: 0.6rem; }
