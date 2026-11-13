@@ -8,7 +8,6 @@ Plain HTML + CSS + ~40 lines of JS. No framework, no package manager. CI runs tw
 index.html            résumé (the home page)
 work/index.html       selected projects (served at /work/)
 contact/index.html    email, GitHub, LinkedIn (served at /contact/)
-work.html             redirect stub so old /work.html links still land on /work/
 scripts/build_blog.py generates blog/ (gitignored) from the Sanity posts sitelaunchrva.com uses
 scripts/inline_assets.py  CI only: inlines site.css + theme.js into every page (rewrites files in place)
 assets/fonts/         self-hosted IBM Plex woff2 + license
